@@ -54,4 +54,5 @@ set columns=80
 call pathogen#infect()
 let mapleader = '\'
 map <leader>g :GundoToggle<CR> 
+nmap <leader>a <Esc>:Ack!
 
