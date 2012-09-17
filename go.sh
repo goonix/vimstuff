@@ -10,6 +10,9 @@
 #git submodule add https://github.com/vim-scripts/TaskList.vim.git bundle/tasklist
 #git submodule add https://github.com/vim-scripts/pep8.git bundle/pep8
 
+#requires ruby - deal breaker!
+#git submodule add https://github.com/wincent/Command-T.git bundle/command-t
+
 #installed
 #git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
 #git submodule add https://github.com/mileszs/ack.vim.git bundle/ack
@@ -17,8 +20,8 @@
 #git submodule add https://github.com/sjl/gundo.vim.git bundle/gundo
 #git submodule add https://github.com/tpope/vim-git.git bundle/git
 #git submodule add https://github.com/vim-scripts/The-NERD-tree.git bundle/nerdtree
-#git submodule add https://github.com/wincent/Command-T.git bundle/command-t
 #git submodule add https://github.com/tpope/vim-commentary.git bundle/vim-commentary
+#git submodule add https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
 
 git submodule foreach git submodule init
 git submodule foreach git submodule update
