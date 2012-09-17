@@ -22,6 +22,7 @@
 #git submodule add https://github.com/vim-scripts/The-NERD-tree.git bundle/nerdtree
 #git submodule add https://github.com/tpope/vim-commentary.git bundle/vim-commentary
 #git submodule add https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
+#git submodule add https://github.com/gregsexton/gitv.git bundle/gitv
 
 git submodule foreach git submodule init
 git submodule foreach git submodule update
