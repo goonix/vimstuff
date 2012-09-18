@@ -38,21 +38,31 @@ autocmd BufEnter,BufNewFile,BufRead *.json set et ts=4 sw=4 ft=javascript
 " The man plugin does lookup with control-k, or :Man
 "runtime ftplugin/man.vim
 "Quick write session with F2
-unmap <F2>
-map <F2> :mksession! ~/Documents/my_default_session.vim <cr>
+"unmap <F2>
+"map <F2> :mksession! ~/Documents/my_default_session.vim <cr>
 "And load session with F3
-unmap <F3>
-map <F3> :source ~/Documents/my_default_session.vim <cr>
+" unmap <F3>
+" map <F3> :source ~/Documents/my_default_session.vim <cr>
 "unmap <C-N>
 "Control n to open a new tab
 map <C-N> :tabnew <cr>
 "set the proprietary title ;)
-set title titlestring=MYpad
+"set title titlestring=MYpad
 set columns=80
+
+"system dependent stuff
+let hostname = substitute(system('hostname'), '\n', '', '')
+if hostname == "mosborn-pc"
+   set lines=54
+   set columns=120
+" elseif hostname == "mac"
+"    ...
+endif
 
 "plugin stuff
 call pathogen#infect()
 let mapleader = '\'
 map <leader>g :GundoToggle<CR> 
 nmap <leader>a <Esc>:Ack!
+nmap <leader>ct <Esc>:call system('etags --recurse=yes *')
 
