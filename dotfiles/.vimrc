@@ -48,11 +48,14 @@ autocmd BufEnter,BufNewFile,BufRead *.json set et ts=4 sw=4 ft=javascript
 map <C-N> :tabnew <cr>
 "set the proprietary title ;)
 "set title titlestring=MYpad
-set columns=80
+
+if has('gui_running')
+   set columns=80
+endif
 
 "system dependent stuff
 let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname == "mosborn-pc"
+if hostname == "mosborn-pc" && has('gui_running')
    set lines=54
    set columns=120
 " elseif hostname == "mac"
