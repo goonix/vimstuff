@@ -66,3 +66,24 @@ map <leader>g :GundoToggle<CR>
 nmap <leader>a <Esc>:Ack!
 nmap <leader>ct <Esc>:call system('etags --recurse=yes *')
 
+"""""""""""""""""""""
+" additional mappings
+"""""""""""""""""""""
+if has('gui_running')
+   nnoremap <leader>p "+p
+   nnoremap <leader>P "+P
+endif
+
+""""""""""
+"functions
+""""""""""
+
+"Wahler, R. "vim restores cursor position; exclude special files"
+"http://stackoverflow.com/questions/2393671/vim-restores-cursor-position-exclude-special-files
+"(Accessed September 2012)
+function! PositionCursorFromViminfo()
+  if !(bufname("%") =~ '\(COMMIT_EDITMSG\)') && line("'\"") > 1 && line("'\"") <= line("$")
+    exe "normal! g`\""
+  endif
+endfunction
+autocmd BufReadPost * call PositionCursorFromViminfo()
