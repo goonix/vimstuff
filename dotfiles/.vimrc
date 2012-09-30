@@ -68,6 +68,7 @@ let mapleader = '\'
 map <leader>g :GundoToggle<CR> 
 nmap <leader>a <Esc>:Ack!
 nmap <leader>ct <Esc>:call system('etags --recurse=yes *')
+map <leader>td <Plug>TaskList
 
 """""""""""""""""""""
 " additional mappings
