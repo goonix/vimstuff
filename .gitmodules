@@ -34,3 +34,6 @@
 [submodule "syntaxattr"]
 	path = syntaxattr
 	url = https://github.com/vim-scripts/SyntaxAttr.vim.git
+[submodule "bundle/syntaxattr"]
+	path = bundle/syntaxattr
+	url = https://github.com/vim-scripts/SyntaxAttr.vim.git
