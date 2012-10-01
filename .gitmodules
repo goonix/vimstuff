@@ -31,3 +31,6 @@
 [submodule "bundle/tasklist"]
 	path = bundle/tasklist
 	url = https://github.com/vim-scripts/TaskList.vim.git
+[submodule "syntaxattr"]
+	path = syntaxattr
+	url = https://github.com/vim-scripts/SyntaxAttr.vim.git
