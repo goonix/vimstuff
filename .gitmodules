@@ -37,3 +37,6 @@
 [submodule "bundle/syntaxattr"]
 	path = bundle/syntaxattr
 	url = https://github.com/vim-scripts/SyntaxAttr.vim.git
+[submodule "bundle/csapprox"]
+	path = bundle/csapprox
+	url = https://github.com/vim-scripts/CSApprox.git
