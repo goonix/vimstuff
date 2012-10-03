@@ -40,3 +40,12 @@
 [submodule "bundle/csapprox"]
 	path = bundle/csapprox
 	url = https://github.com/vim-scripts/CSApprox.git
+[submodule "bundle/pdftotext"]
+	path = bundle/pdftotext
+	url = https://github.com/vim-scripts/pdftotext.git
+[submodule "bundle/delimitMate"]
+	path = bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
+[submodule "bundle/TagHighlight"]
+	path = bundle/TagHighlight
+	url = https://github.com/vim-scripts/TagHighlight.git

@@ -5,7 +5,14 @@ set nohls       " turn off highlight on search
 set et          " turn on expand tab
 " colorscheme adjustments :hi lists the symbols and values for this
 "colo evening    " change the colorscheme
-colo mycolor     " change the colorscheme
+"enable 256 colors
+set t_Co=256
+"colo mycolor     " change the colorscheme
+colo input_256_20121002         " change the colorscheme
+" syntax enable
+" set background=dark
+" let g:solarized_termcolors=256
+" colorscheme solarized
 " make the preprocessor stuff a lighter color
 "hi PreProc ctermfg=yellow
 "hi Constant cterm=underline,bold ctermfg=9
@@ -31,6 +38,8 @@ autocmd BufEnter *.pro,*.prolog set et ts=4 sw=4 cindent ft=prolog
 "autocmd BufEnter *.html set et ts=4 sw=4 wm=8 nocindent
 autocmd BufEnter *.html set et ts=4 sw=4
 autocmd BufEnter,BufNewFile,BufRead *.json set et ts=4 sw=4 ft=javascript
+autocmd BufEnter,BufRead,BufWritePost * :UpdateTypesFile "reread TagHighlight stuff
+let delimitMate_expand_cr = 1
 "
 " abbreviations
 "ab teh the
@@ -69,6 +78,7 @@ map <leader>g :GundoToggle<CR>
 nmap <leader>a <Esc>:Ack!
 nmap <leader>ct <Esc>:call system('etags --recurse=yes *')
 map <leader>td <Plug>TaskList
+map <leader>us :UpdateTypesFile<CR>
 
 """""""""""""""""""""
 " additional mappings
