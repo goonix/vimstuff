@@ -27,6 +27,8 @@ autocmd BufEnter ?akefile* set noet ts=8 sw=8 nocindent list
 autocmd BufEnter *.cpp,*.h,*.c,*.java,*.pl,*.html,*.jsp,*.groovy,*.php,*.xml,*.pl,*.pm,*.py set et ts=4 sw=4 cindent 
 " change the filetype
 autocmd BufEnter *.pro,*.prolog set et ts=4 sw=4 cindent ft=prolog
+autocmd BufEnter *.txt colorscheme default
+autocmd BufEnter *.txt hi Normal guifg=#333
 " for html
 "autocmd BufEnter *.html set et ts=4 sw=4 wm=8 nocindent
 autocmd BufEnter *.html set et ts=4 sw=4
