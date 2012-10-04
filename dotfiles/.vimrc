@@ -1,7 +1,10 @@
 " Here are John's
 " vimrc settings
 "set wm=8        " set wrapmargin
-set nohls       " turn off highlight on search
+"set nohls       " turn off highlight on search
+set hls       " turn off highlight on search
+"mapping to clear highlighted search results
+nnoremap <esc> :noh<return><esc>
 set et          " turn on expand tab
 " colorscheme adjustments :hi lists the symbols and values for this
 "colo evening    " change the colorscheme
