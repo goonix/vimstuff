@@ -10,6 +10,7 @@ if exists("syntax_on")
   syntax reset
 endif
 let g:colors_name = "mycolor"
+hi link javaSpecialChar Constant
 hi Normal		guifg=White		guibg=black
 "hi Comment	term=bold		ctermfg=LightBlue		guifg=yellow "need to try.. same as ls
 "colour81
@@ -20,7 +21,8 @@ hi Identifier term=underline	cterm=bold			ctermfg=NONE guifg=#40ffff
 "hi Statement term=bold		ctermfg=NONE guifg=#aa4444
 hi Statement term=bold		ctermfg=NONE gui=bold	guifg=#aa4444
 hi PreProc	term=underline	ctermfg=NONE guifg=#ff80ff
-hi Type	term=underline		ctermfg=NONE gui=bold
+"hi Type	term=underline		ctermfg=NONE gui=bold
+hi Type	term=underline		ctermfg=NONE guifg=#00d0d0
 hi Function	term=bold		ctermfg=NONE guifg=White
 hi Repeat	term=underline	ctermfg=NONE guifg=white
 hi Operator				ctermfg=NONE guifg=Red
@@ -41,8 +43,15 @@ hi javaType ctermfg=NONE guifg=#00d0d0
 hi javaTypeDef ctermfg=NONE guifg=#00d0d0
 hi javaCommentTitle ctermfg=NONE guifg=#ccdf32
 hi javaNumber ctermfg=NONE guifg=#ffff00
+hi javaParen ctermfg=NONE guifg=#FF8080
 "hi Normal ctermfg=NONE guifg=#ff0000
+hi javaFuncDef ctermfg=NONE guifg=#ff0000
+hi javaRepeat ctermfg=NONE guifg=#00d0d0
+"hi Keyword ctermfg=NONE guifg=#ff0000
+hi field ctermfg=NONE guifg=#79ABFF
 hi phpIdentifier ctermfg=NONE guifg=#79ABFF
+hi phpVarSelector ctermfg=NONE guifg=#79ABFF
+"hi phpRegion ctermfg=NONE guifg=#00d0d0
 
 " Common groups that link to default highlighting.
 " You can specify other highlighting easily.
