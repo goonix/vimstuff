@@ -42,9 +42,16 @@ autocmd BufEnter *.pro,*.prolog set et ts=4 sw=4 cindent ft=prolog
 autocmd BufEnter *.html set et ts=4 sw=4
 autocmd BufEnter,BufNewFile,BufRead *.json set et ts=4 sw=4 ft=javascript
 "autocmd BufEnter,BufRead,BufWritePost * :UpdateTypesFile "reread TagHighlight stuff
-autocmd BufWritePost * :UpdateTypesFile "reread TagHighlight stuff
+"autocmd BufWritePost * :UpdateTypesFile "reread TagHighlight stuff
+autocmd FileWritePost * :UpdateTypesFile "reread TagHighlight stuff
 let delimitMate_expand_cr = 1
-"
+
+" Setup Rainbow Parentheses plugin
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 " abbreviations
 "ab teh the
 "ab tomarrow tomorrow
@@ -62,9 +69,9 @@ map <C-N> :tabnew <cr>
 "set the proprietary title ;)
 "set title titlestring=MYpad
 
-if has('gui_running')
-   set columns=80
-endif
+"if has('gui_running')
+"   set columns=80
+"endif
 
 "system dependent stuff
 let hostname = substitute(system('hostname'), '\n', '', '')
@@ -83,6 +90,7 @@ nmap <leader>a <Esc>:Ack!
 nmap <leader>ct <Esc>:call system('etags --recurse=yes *')
 map <leader>td <Plug>TaskList
 noremap <leader>us :UpdateTypesFile<CR>
+noremap <leader>cac :%ArrangeColumn<CR>
 
 """""""""""""""""""""
 " additional mappings
@@ -105,3 +113,15 @@ function! PositionCursorFromViminfo()
   endif
 endfunction
 autocmd BufReadPost * call PositionCursorFromViminfo()
+
+
+" modify selected text using combining diacritics
+command! -range -nargs=0 Overline        call s:CombineSelection(<line1>, <line2>, '0305')
+command! -range -nargs=0 Underline       call s:CombineSelection(<line1>, <line2>, '0332')
+command! -range -nargs=0 DoubleUnderline call s:CombineSelection(<line1>, <line2>, '0333')
+command! -range -nargs=0 Strikethrough   call s:CombineSelection(<line1>, <line2>, '0336')
+
+function! s:CombineSelection(line1, line2, cp)
+  execute 'let char = "\u'.a:cp.'"'
+  execute a:line1.','.a:line2.'s/\%V[^[:cntrl:]]/&'.char.'/ge'
+endfunction
