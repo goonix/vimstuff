@@ -49,3 +49,15 @@
 [submodule "bundle/TagHighlight"]
 	path = bundle/TagHighlight
 	url = https://github.com/vim-scripts/TagHighlight.git
+[submodule "bundle/csv"]
+	path = bundle/csv
+	url = https://github.com/chrisbra/csv.vim.git
+[submodule "bundle/ranbow_parentheses"]
+	path = bundle/ranbow_parentheses
+	url = https://github.com/kien/rainbow_parentheses.vim.git
+[submodule "bundle/code2html"]
+	path = bundle/code2html
+	url = https://github.com/vim-scripts/code2html.git
+[submodule "bundle/buf2html"]
+	path = bundle/buf2html
+	url = https://github.com/vim-scripts/buf2html.vim.git
