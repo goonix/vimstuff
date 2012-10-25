@@ -55,3 +55,6 @@
 [submodule "bundle/ranbow_parentheses"]
 	path = bundle/ranbow_parentheses
 	url = https://github.com/kien/rainbow_parentheses.vim.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab.git
