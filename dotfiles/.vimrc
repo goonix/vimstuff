@@ -2,6 +2,16 @@
 " vimrc settings
 "set wm=8        " set wrapmargin
 "set nohls       " turn off highlight on search
+
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+set scrolloff=3
+set history=999
+runtime macros/matchit.vim
+set visualbell
+
 set hls       " turn off highlight on search
 "mapping to clear highlighted search results
 nnoremap <esc> :noh<return><esc>
@@ -34,7 +44,7 @@ set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ [%{&ff}]\ %P
 autocmd BufEnter ?akefile* set noet ts=8 sw=8 nocindent list
 "lcs=tab:>-,trail:x
 " for source code
-autocmd BufEnter *.cpp,*.h,*.c,*.java,*.pl,*.html,*.jsp,*.groovy,*.php,*.xml,*.pl,*.pm,*.py set et ts=4 sw=4 cindent 
+autocmd BufEnter *.cpp,*.h,*.c,*.java,*.pl,*.html,*.jsp,*.groovy,*.php,*.xml,*.pl,*.pm,*.py,*.js set et ts=4 sw=4 cindent 
 " change the filetype
 autocmd BufEnter *.pro,*.prolog set et ts=4 sw=4 cindent ft=prolog
 " for html
