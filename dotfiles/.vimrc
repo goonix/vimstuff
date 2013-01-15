@@ -3,16 +3,14 @@
 "set wm=8        " set wrapmargin
 "set nohls       " turn off highlight on search
 
+set nocp
 syntax on
 filetype on
 filetype plugin on
 filetype indent on
 set scrolloff=3
 set history=999
-runtime macros/matchit.vim
-set visualbell
 
-set hls       " turn off highlight on search
 "mapping to clear highlighted search results
 nnoremap <esc> :noh<return><esc>
 set et          " turn on expand tab
@@ -44,12 +42,12 @@ set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ [%{&ff}]\ %P
 autocmd BufEnter ?akefile* set noet ts=8 sw=8 nocindent list
 "lcs=tab:>-,trail:x
 " for source code
-autocmd BufEnter *.cpp,*.h,*.c,*.java,*.pl,*.html,*.jsp,*.groovy,*.php,*.xml,*.pl,*.pm,*.py,*.js set et ts=4 sw=4 cindent 
+autocmd BufEnter *.cpp,*.h,*.c,*.java,*.pl,*.html,*.jsp,*.gsp,*.groovy,*.php,*.xml,*.pl,*.pm,*.py,*.js set et ts=4 sw=4 cindent 
 " change the filetype
 autocmd BufEnter *.pro,*.prolog set et ts=4 sw=4 cindent ft=prolog
 " for html
 "autocmd BufEnter *.html set et ts=4 sw=4 wm=8 nocindent
-autocmd BufEnter *.html set et ts=4 sw=4
+autocmd BufEnter *.html,*.gsp set et ts=4 sw=4 filetype=htmlm4
 autocmd BufEnter,BufNewFile,BufRead *.json set et ts=4 sw=4 ft=javascript
 "autocmd BufEnter,BufRead,BufWritePost * :UpdateTypesFile "reread TagHighlight stuff
 "autocmd BufWritePost * :UpdateTypesFile "reread TagHighlight stuff
@@ -102,6 +100,8 @@ map <leader>td <Plug>TaskList
 noremap <leader>us :UpdateTypesFile<CR>
 noremap <leader>cac :%ArrangeColumn<CR>
 
+runtime macros/matchit.vim
+
 """""""""""""""""""""
 " additional mappings
 """""""""""""""""""""
@@ -135,3 +135,23 @@ function! s:CombineSelection(line1, line2, cp)
   execute 'let char = "\u'.a:cp.'"'
   execute a:line1.','.a:line2.'s/\%V[^[:cntrl:]]/&'.char.'/ge'
 endfunction
+
+"toggles whether or not the current window is automatically zoomed
+function! ToggleMaxWins()
+  if exists('g:windowMax')
+    au! maxCurrWin
+    wincmd =
+    unlet g:windowMax
+  else
+    augroup maxCurrWin
+        " au BufEnter * wincmd _ | wincmd |
+        "
+        " only max it vertically
+        au! WinEnter * wincmd _
+    augroup END
+    do maxCurrWin WinEnter
+    let g:windowMax=1
+  endif
+endfunction
+" nnoremap <Leader>max :call ToggleMaxWins()<CR>
+nnoremap <Leader>o :call ToggleMaxWins()<CR>
