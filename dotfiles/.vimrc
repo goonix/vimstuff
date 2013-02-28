@@ -8,11 +8,12 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
-set scrolloff=3
+set scrolloff=999
 set history=999
+set hls       " turn on highlight on search
 
 "mapping to clear highlighted search results
-nnoremap <esc> :noh<return><esc>
+nnoremap <Esc> :noh<return><Esc>
 set et          " turn on expand tab
 " colorscheme adjustments :hi lists the symbols and values for this
 "colo evening    " change the colorscheme
@@ -20,13 +21,16 @@ set et          " turn on expand tab
 set t_Co=256
 "colo mycolor     " change the colorscheme
 colo recogneyes " change the colorscheme
-" syntax enable
+"syntax enable
 " set background=dark
 " let g:solarized_termcolors=256
 " colorscheme solarized
 " make the preprocessor stuff a lighter color
 "hi PreProc ctermfg=yellow
 "hi Constant cterm=underline,bold ctermfg=9
+"hi CursorLine   cterm=NONE ctermbg=66 ctermfg=159 guibg=darkred guifg=white
+hi CursorLine   cterm=NONE ctermbg=8 guibg=darkred guifg=white
+set cursorline
 " turn on comment continuation for C style comments
 set fo+=r       " formatoptions r adds new comment line automagically
 " only apply on C comments, and mail forwarding "> "
@@ -47,7 +51,8 @@ autocmd BufEnter *.cpp,*.h,*.c,*.java,*.pl,*.html,*.jsp,*.gsp,*.groovy,*.php,*.x
 autocmd BufEnter *.pro,*.prolog set et ts=4 sw=4 cindent ft=prolog
 " for html
 "autocmd BufEnter *.html set et ts=4 sw=4 wm=8 nocindent
-autocmd BufEnter *.html,*.gsp set et ts=4 sw=4 filetype=htmlm4
+"autocmd BufEnter *.html,*.gsp set et ts=4 sw=4 filetype=htmlm4
+autocmd BufEnter *.html,*.gsp set et ts=4 sw=4 filetype=html
 autocmd BufEnter,BufNewFile,BufRead *.json set et ts=4 sw=4 ft=javascript
 "autocmd BufEnter,BufRead,BufWritePost * :UpdateTypesFile "reread TagHighlight stuff
 "autocmd BufWritePost * :UpdateTypesFile "reread TagHighlight stuff
