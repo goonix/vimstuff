@@ -57,7 +57,8 @@ autocmd BufEnter,BufNewFile,BufRead *.json set et ts=4 sw=4 ft=javascript
 "autocmd BufEnter,BufRead,BufWritePost * :UpdateTypesFile "reread TagHighlight stuff
 "autocmd BufWritePost * :UpdateTypesFile "reread TagHighlight stuff
 autocmd FileWritePost * :UpdateTypesFile "reread TagHighlight stuff
-let delimitMate_expand_cr = 1
+"let delimitMate_expand_cr = 1
+let delimitMate_expand_cr = 0 "switched off for 7.3
 
 " Setup Rainbow Parentheses plugin
 au VimEnter * RainbowParenthesesToggle
@@ -104,6 +105,17 @@ nmap <leader>ct <Esc>:call system('etags --recurse=yes *')
 map <leader>td <Plug>TaskList
 noremap <leader>us :UpdateTypesFile<CR>
 noremap <leader>cac :%ArrangeColumn<CR>
+
+"format JSON
+map <Leader>fj !python -m json.tool<CR>
+"reread .vimrc
+map <Leader>rr :so $MYVIMRC<CR>
+
+:highlight SignColumn ctermbg=0
+:highlight lineAdded ctermfg=NONE
+:highlight lineModified ctermfg=NONE
+:highlight lineRemoved ctermfg=NONE
+let g:gitgutter_highlight_lines = 0
 
 runtime macros/matchit.vim
 
