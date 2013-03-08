@@ -31,6 +31,10 @@ colo recogneyes " change the colorscheme
 "hi CursorLine   cterm=NONE ctermbg=66 ctermfg=159 guibg=darkred guifg=white
 hi CursorLine   cterm=NONE ctermbg=8 guibg=darkred guifg=white
 set cursorline
+"hi StatusLine term=bold,reverse cterm=bold ctermbg=101 ctermfg=16 gui=bold guibg=#808070 guifg=#000000
+"hi StatusLineNC term=reverse cterm=NONE ctermbg=59 ctermfg=16 gui=italic guibg=#404c4c guifg=#000000
+hi StatusLine term=bold,reverse cterm=bold ctermbg=101 ctermfg=16 gui=bold guibg=#808070 guifg=#000000
+hi StatusLineNC term=reverse cterm=NONE ctermbg=59 ctermfg=16 gui=italic guibg=#404c4c guifg=#000000
 " turn on comment continuation for C style comments
 set fo+=r       " formatoptions r adds new comment line automagically
 " only apply on C comments, and mail forwarding "> "
