@@ -13,7 +13,7 @@ set history=999
 set hls       " turn on highlight on search
 
 "mapping to clear highlighted search results
-nnoremap <Esc> :noh<return><Esc>
+nnoremap <Esc> :noh<return><Esc><bar>:syntax sync fromstart<CR>
 set et          " turn on expand tab
 " colorscheme adjustments :hi lists the symbols and values for this
 "colo evening    " change the colorscheme
@@ -45,6 +45,9 @@ set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ [%{&ff}]\ %P
 "set statusline+=%4*\ %{&ff}\                              "FileFormat (dos/unix..) 
 "
 " AUTO-COMMANDS
+" fix syntax highlighting (if fubar'd)
+" (http://vim.wikia.com/wiki/Fix_syntax_highlighting)
+"autocmd BufEnter * :syntax sync fromstart
 " for Makefiles
 " added some special formatting in Makefiles
 autocmd BufEnter ?akefile* set noet ts=8 sw=8 nocindent list
@@ -176,3 +179,5 @@ function! ToggleMaxWins()
 endfunction
 " nnoremap <Leader>max :call ToggleMaxWins()<CR>
 nnoremap <Leader>o :call ToggleMaxWins()<CR>
+imap <leader><SPACE> <C-x><C-o>
+"imap <C-Space> <C-x><C-o>
